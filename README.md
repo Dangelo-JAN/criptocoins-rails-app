@@ -34,8 +34,8 @@ Using your comand line or terminal type `git clone https://github.com/Dangelo-JA
 ### Install
 
 Using your terminal type to:
-- Install [rails] `gem install rails`
-- Install [dependencies] `bundle install`
+- Install rails `gem install rails`
+- Install dependencies `bundle install`
 
 ## Authors
 
