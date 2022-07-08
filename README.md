@@ -29,13 +29,23 @@ You need get install those programs:
 
 ### Setup
 
-Using your comand line or terminal type `git clone https://github.com/Dangelo-JAN/criptocoins-rails-app.git`
+Using your comand line or terminal type:
+``` bash 
+git clone https://github.com/Dangelo-JAN/criptocoins-rails-app.git
+```
+
 
 ### Install
 
 Using your terminal type to:
-- Install rails `gem install rails`
-- Install dependencies `bundle install`
+- Install rails
+``` bash 
+  gem install rails 
+```
+- Install dependencies
+``` bash 
+  bundle install
+```
 
 ## Authors
 
