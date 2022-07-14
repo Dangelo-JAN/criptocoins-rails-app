@@ -10,6 +10,10 @@
   </head>
 
   <body>
-    <h1>Page User index<h1>
+    <% @users.each do |user| %>
+      <%= link_to user_path(user.id) do%>
+        <%= render "partials/user_card", user: user %>
+      <%end%>
+    <% end %>
   </body>
 </html>
