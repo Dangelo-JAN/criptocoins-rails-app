@@ -1,33 +1,37 @@
 require 'rails_helper'
 
-RSpec.describe 'Users', type: :request do
-  describe 'GET #index' do
-    before(:each) { get users_path }
-    it 'is a success' do
-      expect(response).to have_http_status(:ok)
+RSpec.describe 'User', type: :request do
+  describe 'GET /index' do
+    it 'returns http success' do
+      get users_path
+      expect(response).to have_http_status(:success)
     end
 
-    it "renders 'index' template" do
-      expect(response).to render_template(:index)
+    it 'should render index template' do
+      get users_path
+      expect(response).to render_template('index')
     end
 
-    it 'should render the correct text in the index template' do
-      expect(response.body).to include('Page User index')
+    it 'should render correct text in template' do
+      get users_path
+      expect(response.body).to include('User Index page')
     end
   end
 
-  describe 'GET #show' do
-    before(:each) { get user_path(1) }
-    it 'is a success' do
-      expect(response).to have_http_status(:ok)
+  describe 'GET /show' do
+    it 'returns http success' do
+      get user_path(1)
+      expect(response).to have_http_status(:success)
     end
 
-    it "renders 'show' template" do
+    it 'should render show template' do
+      get user_path(1)
       expect(response).to render_template(:show)
     end
 
-    it 'should render the correct text in the show template' do
-      expect(response.body).to include('Page User Show')
+    it 'should render correct text in template' do
+      get user_path(1)
+      expect(response.body).to include('User Show page')
     end
   end
 end
