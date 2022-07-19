@@ -1,24 +1,27 @@
 class PostsController < ApplicationController
   def index
-    @user = User.find(params[:id])
-    @posts = @user.post
+    @user = User.find(params[:user_id])
+    @posts = @user.posts
   end
 
   def show
+    puts params
     @post = Post.find(params[:id])
-    @user = User.find(params[:user_id])
+    @user = current_user
     @comments = @post.comments
   end
 
   def new
     @post = Post.new
+    @user = current_user
   end
 
   def create
     @post = Post.new(post_params)
     @post.author = current_user
     if @post.save
-      redirect_to user_post_path(current_user, @post)
+      puts @post
+      redirect_to user_posts_path(current_user)
     else
       render :new
     end

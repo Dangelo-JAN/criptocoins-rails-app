@@ -1,19 +1,2 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>CriptocoinsRails</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-  </head>
-
-  <body>
-    <% @users.each do |user| %>
-      <%= link_to user_path(user.id) do%>
-        <%= render "partials/user_card", user: user %>
-      <%end%>
-    <% end %>
-  </body>
-</html>
+<%= render '/nav' %>
+<%= render 'users' %>
