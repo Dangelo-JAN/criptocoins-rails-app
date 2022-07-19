@@ -1,11 +1,9 @@
 <h1>3. Post Index page</h1>
 <p> this is the post index page </p>
-
 <div>
     <%= image_tag @user.photo%>
     <button><%= @user.name %> Posts: <%= @user.posts_counter%></button>
 </div>
-
 <%# show all user posts %>
 <div>
     <% @user.posts.each do |post| %>
